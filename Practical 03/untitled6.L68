@@ -1,0 +1,39 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 29/02/2024 13:59:09
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000                            10      * EXT performs a signed extension, as the top bit of a value is essentially an indicator of whether it is positive or negative
+00001000                            11  
+00001000                            12  
+00001000  203C FEDCBA14             13      MOVE.L #$FEDCBA14, D0
+00001006  4880                      14      EXT.W D0 ; 14 -> 0001 0100 ; msb positive (0), this is extended to 0000 0000 0001 0100
+00001008                            15               ; FEDCBA14 -> FEDC0014
+00001008                            16               
+00001008  223C C1208489             17      MOVE.L #$C1208489, D1
+0000100E                            18      
+0000100E  48C1                      19      EXT.L D1 ;  8489-> 1000 0100 1000 1001 ;
+00001010                            20  
+00001010                            21  
+00001010  FFFF FFFF                 22      SIMHALT             ; halt simulator
+00001014                            23  
+00001014                            24  * Put variables and constants here
+00001014                            25  
+00001014                            26      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1000

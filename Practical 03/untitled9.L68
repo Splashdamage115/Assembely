@@ -1,0 +1,36 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 29/02/2024 14:04:59
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000  203C FF940000             10      move.l  #$FF940000, d0
+00001006  4A40                      11      tst.w d0
+00001008  6700 0004                 12      beq LabelEq
+0000100C  3200                      13      move d0, d1
+0000100E                            14  LabelEq:
+0000100E  3600                      15      move d0,d3
+00001010                            16  
+00001010                            17  
+00001010  FFFF FFFF                 18      SIMHALT             ; halt simulator
+00001014                            19  
+00001014                            20  * Put variables and constants here
+00001014                            21  
+00001014                            22      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+LABELEQ             100E
+START               1000

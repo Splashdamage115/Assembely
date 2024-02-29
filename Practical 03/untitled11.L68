@@ -1,0 +1,45 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 29/02/2024 14:08:12
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000  =00000003                 10  X      EQU      3
+00001000  =00000007                 11  Y      EQU      7 
+00001000                            12   
+00001000  303C 0003                 13      MOVE    #X, D0
+00001004  323C 0007                 14      MOVE    #Y, D1
+00001008                            15   
+00001008                            16      LOOP:
+00001008  5240                      17      ADD #$1, D0
+0000100A  5341                      18      SUB #$1,D1
+0000100C  B240                      19      CMP D0, D1
+0000100E  6F00 0004                 20      BLE EXIT    
+00001012  60F4                      21      BRA LOOP    
+00001014                            22   
+00001014                            23      EXIT:
+00001014                            24  
+00001014  303C 0003                 25      MOVE #03, D0
+00001018  4E4F                      26      TRAP #15
+0000101A                            27  
+0000101A                            28      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+EXIT                1014
+LOOP                1008
+START               1000
+X                   3
+Y                   7

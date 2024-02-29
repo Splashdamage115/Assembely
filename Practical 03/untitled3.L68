@@ -1,0 +1,37 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.16.01
+Created On: 29/02/2024 13:41:01
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :
+00000000                             3  * Written by :
+00000000                             4  * Date       :
+00000000                             5  * Description:
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000  203C 01AABB20             10      move.l  #$0001AABB20, d0
+00001006  B03C 0000                 11      cmp.b   #$00, d0 ; subtracts source operand from destination register
+0000100A  6700 0004                 12      beq.w   ValueIs20 ; branch if eual
+0000100E  1200                      13      move.b  d0, d1
+00001010                            14   
+00001010                            15  ValueIs20:
+00001010  1400                      16      move.b  d0, d2
+00001012                            17  
+00001012                            18  
+00001012  FFFF FFFF                 19      SIMHALT             ; halt simulator
+00001016                            20  
+00001016                            21  * Put variables and constants here
+00001016                            22  
+00001016                            23      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+START               1000
+VALUEIS20           1010
